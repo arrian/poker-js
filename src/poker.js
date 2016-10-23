@@ -458,7 +458,7 @@ class Round {
 	nextState() {
 		if(this.players.length <= 1) {
 			this.end();
-		} else if(this.awaitingAction()) {
+		} else if(this.isAwaitingAction()) {
 			this.players.push(this.players.shift());
 			this.actingPlayer = this.players[0];
 		} else if(this.progress === Round.State.DEALT) {
@@ -472,14 +472,12 @@ class Round {
 		}
 	}
 
-	awaitingAction() {
+	isAwaitingAction() {
 		const allPlayersActed = _.every(_.map(this.players, player => player.id), _.partial(_.has, this.bets));
-		console.log('all acted: ' + allPlayersActed);
 		if(!allPlayersActed) return true;
 
 		const betsEqual = _.uniq(_.map(this.bets)).length === 1; // TODO: improve this logic. bets may be different if all in
 
-		console.log('all bets equal: ' + betsEqual);
 		return !betsEqual;
 	}
 
@@ -490,7 +488,7 @@ class Round {
 	act(player, action) {
 		if(player !== this.actingPlayer) {
 			this.dead(player);
-			throw new Exception('Player acted out of turn');
+			throw new Error('Player acted out of turn');
 		}
 
 		this.record(player, action);
@@ -501,6 +499,7 @@ class Round {
 		else if(action.type === Action.Type.RAISE) this.raise(player, action);
 		else if(action.type === Action.Type.CALL) this.call(player, action);
 		else if(action.type === Action.Type.ALL_IN) this.allIn(player, action);
+		else throw new Error(`Invalid action ${action.type}`);
 
 		this.nextState();
 	}
@@ -737,5 +736,6 @@ module.exports = {
 	Hand,
 	Action,
 	Player,
+	Round,
 	Table
 };
