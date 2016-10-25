@@ -459,8 +459,7 @@ class Round {
 		if(this.players.length <= 1) {
 			this.end();
 		} else if(this.isAwaitingAction()) {
-			this.players.push(this.players.shift());
-			this.actingPlayer = this.players[0];
+			this.nextPlayer();
 		} else if(this.progress === Round.State.DEALT) {
 			this.flop();
 		} else if(this.progress === Round.State.FLOPPED) {
@@ -469,6 +468,15 @@ class Round {
 			this.river();
 		} else {
 			this.end();
+		}
+	}
+
+	nextPlayer() {
+		if(!this.players.length) {
+			this.actingPlayer = null;
+		} else {
+			this.players.push(this.players.shift());
+			this.actingPlayer = this.players[0];
 		}
 	}
 
@@ -507,6 +515,7 @@ class Round {
 	dead(player) {
 		this.record(player, new Action(Action.Type.DEAD));
 		this.removePlayer(player);
+		this.nextPlayer();
 	}
 
 	fold(player, action) {
@@ -637,6 +646,9 @@ class Round {
 	}
 
 	removePlayer(player) {
+		if(this.actingPlayer.id === player.id) {
+			this.nextPlayer();
+		}
 		_.remove(this.players, p => p.id === player.id);
 	}
 

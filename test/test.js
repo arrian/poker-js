@@ -132,6 +132,16 @@ describe('Round', function() {
 		});
 	});
 
+	describe('dead()', function() {
+		it('should remove the player from the round', function() {
+			var player1 = new Player('player 1'),
+				round = new Round([player1]);
+
+			round.dead(player1);
+			assert(!round.getActingPlayer());
+		});
+	});
+
 	describe('act()', function() {
 		it('should correctly transition to next game state', function() {
 			var player1 = new Player('player1'),
