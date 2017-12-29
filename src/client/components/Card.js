@@ -4,64 +4,64 @@ import Draggable from 'react-draggable';
 
 const Images = {
 	CLUBS: {
-		ACE: require('babel!svg-react!../assets/faces/0_1.svg?name=Icon'),
-		KING: require('babel!svg-react!../assets/faces/0_13.svg?name=Icon'),
-		QUEEN: require('babel!svg-react!../assets/faces/0_12.svg?name=Icon'),
-		JACK: require('babel!svg-react!../assets/faces/0_11.svg?name=Icon'),
-		TEN: require('babel!svg-react!../assets/faces/0_10.svg?name=Icon'),
-		NINE: require('babel!svg-react!../assets/faces/0_9.svg?name=Icon'),
-		EIGHT: require('babel!svg-react!../assets/faces/0_8.svg?name=Icon'),
-		SEVEN: require('babel!svg-react!../assets/faces/0_7.svg?name=Icon'),
-		SIX: require('babel!svg-react!../assets/faces/0_6.svg?name=Icon'),
-		FIVE: require('babel!svg-react!../assets/faces/0_5.svg?name=Icon'),
-		FOUR: require('babel!svg-react!../assets/faces/0_4.svg?name=Icon'),
-		THREE: require('babel!svg-react!../assets/faces/0_3.svg?name=Icon'),
-		TWO: require('babel!svg-react!../assets/faces/0_2.svg?name=Icon')
+		ACE: require('babel!svg-react!../assets/ace-clubs.svg?name=Icon'),
+		KING: require('babel!svg-react!../assets/king-clubs.svg?name=Icon'),
+		QUEEN: require('babel!svg-react!../assets/queen-clubs.svg?name=Icon'),
+		JACK: require('babel!svg-react!../assets/jack-clubs.svg?name=Icon'),
+		TEN: require('babel!svg-react!../assets/ten-clubs.svg?name=Icon'),
+		NINE: require('babel!svg-react!../assets/nine-clubs.svg?name=Icon'),
+		EIGHT: require('babel!svg-react!../assets/eight-clubs.svg?name=Icon'),
+		SEVEN: require('babel!svg-react!../assets/seven-clubs.svg?name=Icon'),
+		SIX: require('babel!svg-react!../assets/six-clubs.svg?name=Icon'),
+		FIVE: require('babel!svg-react!../assets/five-clubs.svg?name=Icon'),
+		FOUR: require('babel!svg-react!../assets/four-clubs.svg?name=Icon'),
+		THREE: require('babel!svg-react!../assets/three-clubs.svg?name=Icon'),
+		TWO: require('babel!svg-react!../assets/two-clubs.svg?name=Icon')
 	},
 	HEARTS: {
-		ACE: require('babel!svg-react!../assets/faces/1_1.svg?name=Icon'),
-		KING: require('babel!svg-react!../assets/faces/1_13.svg?name=Icon'),
-		QUEEN: require('babel!svg-react!../assets/faces/1_12.svg?name=Icon'),
-		JACK: require('babel!svg-react!../assets/faces/1_11.svg?name=Icon'),
-		TEN: require('babel!svg-react!../assets/faces/1_10.svg?name=Icon'),
-		NINE: require('babel!svg-react!../assets/faces/1_9.svg?name=Icon'),
-		EIGHT: require('babel!svg-react!../assets/faces/1_8.svg?name=Icon'),
-		SEVEN: require('babel!svg-react!../assets/faces/1_7.svg?name=Icon'),
-		SIX: require('babel!svg-react!../assets/faces/1_6.svg?name=Icon'),
-		FIVE: require('babel!svg-react!../assets/faces/1_5.svg?name=Icon'),
-		FOUR: require('babel!svg-react!../assets/faces/1_4.svg?name=Icon'),
-		THREE: require('babel!svg-react!../assets/faces/1_3.svg?name=Icon'),
-		TWO: require('babel!svg-react!../assets/faces/1_2.svg?name=Icon')
+		ACE: require('babel!svg-react!../assets/ace-hearts.svg?name=Icon'),
+		KING: require('babel!svg-react!../assets/king-hearts.svg?name=Icon'),
+		QUEEN: require('babel!svg-react!../assets/queen-hearts.svg?name=Icon'),
+		JACK: require('babel!svg-react!../assets/jack-hearts.svg?name=Icon'),
+		TEN: require('babel!svg-react!../assets/ten-hearts.svg?name=Icon'),
+		NINE: require('babel!svg-react!../assets/nine-hearts.svg?name=Icon'),
+		EIGHT: require('babel!svg-react!../assets/eight-hearts.svg?name=Icon'),
+		SEVEN: require('babel!svg-react!../assets/seven-hearts.svg?name=Icon'),
+		SIX: require('babel!svg-react!../assets/six-hearts.svg?name=Icon'),
+		FIVE: require('babel!svg-react!../assets/five-hearts.svg?name=Icon'),
+		FOUR: require('babel!svg-react!../assets/four-hearts.svg?name=Icon'),
+		THREE: require('babel!svg-react!../assets/three-hearts.svg?name=Icon'),
+		TWO: require('babel!svg-react!../assets/two-hearts.svg?name=Icon')
 	},
 	SPADES: {
-		ACE: require('babel!svg-react!../assets/faces/2_1.svg?name=Icon'),
-		KING: require('babel!svg-react!../assets/faces/2_13.svg?name=Icon'),
-		QUEEN: require('babel!svg-react!../assets/faces/2_12.svg?name=Icon'),
-		JACK: require('babel!svg-react!../assets/faces/2_11.svg?name=Icon'),
-		TEN: require('babel!svg-react!../assets/faces/2_10.svg?name=Icon'),
-		NINE: require('babel!svg-react!../assets/faces/2_9.svg?name=Icon'),
-		EIGHT: require('babel!svg-react!../assets/faces/2_8.svg?name=Icon'),
-		SEVEN: require('babel!svg-react!../assets/faces/2_7.svg?name=Icon'),
-		SIX: require('babel!svg-react!../assets/faces/2_6.svg?name=Icon'),
-		FIVE: require('babel!svg-react!../assets/faces/2_5.svg?name=Icon'),
-		FOUR: require('babel!svg-react!../assets/faces/2_4.svg?name=Icon'),
-		THREE: require('babel!svg-react!../assets/faces/2_3.svg?name=Icon'),
-		TWO: require('babel!svg-react!../assets/faces/2_2.svg?name=Icon')
+		ACE: require('babel!svg-react!../assets/ace-spades.svg?name=Icon'),
+		KING: require('babel!svg-react!../assets/king-spades.svg?name=Icon'),
+		QUEEN: require('babel!svg-react!../assets/queen-spades.svg?name=Icon'),
+		JACK: require('babel!svg-react!../assets/jack-spades.svg?name=Icon'),
+		TEN: require('babel!svg-react!../assets/ten-spades.svg?name=Icon'),
+		NINE: require('babel!svg-react!../assets/nine-spades.svg?name=Icon'),
+		EIGHT: require('babel!svg-react!../assets/eight-spades.svg?name=Icon'),
+		SEVEN: require('babel!svg-react!../assets/seven-spades.svg?name=Icon'),
+		SIX: require('babel!svg-react!../assets/six-spades.svg?name=Icon'),
+		FIVE: require('babel!svg-react!../assets/five-spades.svg?name=Icon'),
+		FOUR: require('babel!svg-react!../assets/four-spades.svg?name=Icon'),
+		THREE: require('babel!svg-react!../assets/three-spades.svg?name=Icon'),
+		TWO: require('babel!svg-react!../assets/two-spades.svg?name=Icon')
 	},
 	DIAMONDS: {
-		ACE: require('babel!svg-react!../assets/faces/3_1.svg?name=Icon'),
-		KING: require('babel!svg-react!../assets/faces/3_13.svg?name=Icon'),
-		QUEEN: require('babel!svg-react!../assets/faces/3_12.svg?name=Icon'),
-		JACK: require('babel!svg-react!../assets/faces/3_11.svg?name=Icon'),
-		TEN: require('babel!svg-react!../assets/faces/3_10.svg?name=Icon'),
-		NINE: require('babel!svg-react!../assets/faces/3_9.svg?name=Icon'),
-		EIGHT: require('babel!svg-react!../assets/faces/3_8.svg?name=Icon'),
-		SEVEN: require('babel!svg-react!../assets/faces/3_7.svg?name=Icon'),
-		SIX: require('babel!svg-react!../assets/faces/3_6.svg?name=Icon'),
-		FIVE: require('babel!svg-react!../assets/faces/3_5.svg?name=Icon'),
-		FOUR: require('babel!svg-react!../assets/faces/3_4.svg?name=Icon'),
-		THREE: require('babel!svg-react!../assets/faces/3_3.svg?name=Icon'),
-		TWO: require('babel!svg-react!../assets/faces/3_2.svg?name=Icon')
+		ACE: require('babel!svg-react!../assets/ace-diamonds.svg?name=Icon'),
+		KING: require('babel!svg-react!../assets/king-diamonds.svg?name=Icon'),
+		QUEEN: require('babel!svg-react!../assets/queen-diamonds.svg?name=Icon'),
+		JACK: require('babel!svg-react!../assets/jack-diamonds.svg?name=Icon'),
+		TEN: require('babel!svg-react!../assets/ten-diamonds.svg?name=Icon'),
+		NINE: require('babel!svg-react!../assets/nine-diamonds.svg?name=Icon'),
+		EIGHT: require('babel!svg-react!../assets/eight-diamonds.svg?name=Icon'),
+		SEVEN: require('babel!svg-react!../assets/seven-diamonds.svg?name=Icon'),
+		SIX: require('babel!svg-react!../assets/six-diamonds.svg?name=Icon'),
+		FIVE: require('babel!svg-react!../assets/five-diamonds.svg?name=Icon'),
+		FOUR: require('babel!svg-react!../assets/four-diamonds.svg?name=Icon'),
+		THREE: require('babel!svg-react!../assets/three-diamonds.svg?name=Icon'),
+		TWO: require('babel!svg-react!../assets/two-diamonds.svg?name=Icon')
 	}
 };
 
@@ -106,7 +106,7 @@ export default class Card extends Component {
 			<Draggable>
 			<div onClick={this.flip.bind(this)} className="card" style={cardStyle}>
 				<div style={flippedStyle} className="cardFlipper">
-					<div style={frontFaceStyle} className="cardFront"><span style={topValueStyle}>{value}</span>{ Front ? (<Front />) : null}<span style={bottomValueStyle}>{value}</span></div>
+					<div style={frontFaceStyle} className="cardFront">{ Front ? (<Front />) : null}</div>
 					<div style={backFaceStyle} className="cardBack"></div>
 				</div>
 			</div>

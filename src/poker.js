@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const cuid = require('cuid');
+const colors = require('colors');
 
 const DEAL_SIZE = 2;
 const HAND_SIZE = 5;
@@ -43,7 +44,9 @@ class Card {
 	}
 
 	toString() {
-		return `${this.value.short}${this.suit.short}`;
+		const string = `${this.value.short}${this.suit.short}`;
+		if(this.isRed()) return colors.red.bgWhite(string);
+		return colors.black.bgWhite(string);
 	}
 
 	log() {
@@ -64,6 +67,14 @@ class Card {
 
 	isValue(value) {
 		return value.id === this.value.id;
+	}
+
+	isRed() {
+		return this.isSuit(Suit.HEARTS) || this.isSuit(Suit.DIAMONDS);
+	}
+
+	isBlack() {
+		return this.isSuit(Suit.SPADES) || this.isSuit(Suit.CLUBS);
 	}
 }
 
@@ -207,7 +218,7 @@ class Cards {
 		let result = 0,
 			a = leftCards.cards,
 			b = rightCards.cards;
-			
+
 		_.some(_.zip(a, b), _.spread((aCard, bCard) => {
 			result = aCard.valueOf() - bCard.valueOf();
 			return result !== 0;
@@ -238,7 +249,7 @@ class Hand {
 
 		var allCards = cards.getCombined(communityCards),
 			handTypes = _.reverse(_.sortBy(_.values(Hand.Type), 'rank'));
-		
+
 		_.some(handTypes, (type, key) => {
 			let { hand, kickers } = type.is(allCards);
 			if(hand) {
@@ -279,7 +290,7 @@ Hand.Type = {
 			};
 		}
 	},
-	STRAIGHT_FLUSH: { 
+	STRAIGHT_FLUSH: {
 		rank: 9,
 		name: 'Straight Flush',
 		is: function(cards) {
@@ -309,7 +320,7 @@ Hand.Type = {
 			var handByValues = cards.getGroupedByValue(),
 				triple = _.find(handByValues, valueGroup=> valueGroup.count() === 3), // three of a kind in the full house
 				double = _.find(handByValues, valueGroup=> valueGroup.count() === 2); // two pair in the full house
-		
+
 			return {
 				hand: triple && double ? [ ...triple.getCards(), ...double.getCards()] : null,
 				kickers: null
